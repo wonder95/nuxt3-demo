@@ -1,6 +1,8 @@
 <template>
-  <h1>Detail page</h1>
-  {{ $route.params.id }}
+  <main>
+    <h1>Detail page</h1>
+    {{ $route.params.id }}
+  </main>
 </template>
 
 <script>

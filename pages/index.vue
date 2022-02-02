@@ -1,33 +1,36 @@
 <template>
-  <h1>Index Page</h1>
+  <main>
+    <h1>Index Page</h1>
 
-  <table border="1 px solid">
-    <thead>
-        <tr>
-          <th>Name</th>
-          <th>Symbol</th>
-          <th>Slug</th>
-          <th>Price</th>
-          <th>Details</th>
-        </tr>
-        <tr v-for="currency in data" :key="id">
-          <td>{{ currency.name }}</td>
-          <td>{{ currency.symbol }}</td>
-          <td>{{ currency.slug }}</td>
-          <td>{{ currency.quote.USD.price }}</td>
-          <td><NuxtLink :to="'/currency/' + currency.id">{{ currency.id }}</NuxtLink></td>
-        </tr>
-    </thead>
-  </table>
+    <table border="1 px solid">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Symbol</th>
+        <th>Slug</th>
+        <th>Price</th>
+        <th>Details</th>
+      </tr>
+      <tr v-for="currency in data" :key="id">
+        <td>{{ currency.name }}</td>
+        <td>{{ currency.symbol }}</td>
+        <td>{{ currency.slug }}</td>
+        <td>{{ currency.quote.USD.price }}</td>
+        <td>
+          <NuxtLink :to="'/currency/' + currency.id">{{ currency.id }}</NuxtLink>
+        </td>
+      </tr>
+      </thead>
+    </table>
+  </main>
 </template>
 
 <script>
-import { ref } from 'vue';
+import {ref} from 'vue';
 
 export default {
   name: 'CurrencyList',
-  props: {
-  },
+  props: {},
   setup() {
     const data = [
       {
