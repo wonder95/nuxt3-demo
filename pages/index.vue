@@ -8,25 +8,28 @@
           <th>Symbol</th>
           <th>Slug</th>
           <th>Price</th>
+          <th>Details</th>
         </tr>
         <tr v-for="currency in data" :key="id">
           <td>{{ currency.name }}</td>
           <td>{{ currency.symbol }}</td>
           <td>{{ currency.slug }}</td>
           <td>{{ currency.quote.USD.price }}</td>
+          <td><NuxtLink :to="'/currency/' + currency.id">{{ currency.id }}</NuxtLink></td>
         </tr>
     </thead>
   </table>
 </template>
 
 <script>
+import { ref } from 'vue';
+
 export default {
   name: 'CurrencyList',
   props: {
   },
   setup() {
-    const data = ref(
-    [
+    const data = [
       {
         "id": 1,
         "name": "Bitcoin",
@@ -202,8 +205,50 @@ export default {
           }
         }
       },
-    ]
-  );
+      {
+        "id": 1839,
+        "name": "BNB",
+        "symbol": "BNB",
+        "slug": "bnb",
+        "num_market_pairs": 663,
+        "date_added": "2017-07-25T00:00:00.000Z",
+        "tags": [
+          "marketplace",
+          "centralized-exchange",
+          "payments",
+          "smart-contracts",
+          "binance-smart-chain",
+          "alameda-research-portfolio",
+          "multicoin-capital-portfolio",
+          "moonriver-ecosystem"
+        ],
+        "max_supply": 165116760,
+        "circulating_supply": 165116760.89,
+        "total_supply": 165116760.89,
+        "platform": null,
+        "cmc_rank": 4,
+        "self_reported_circulating_supply": null,
+        "self_reported_market_cap": null,
+        "last_updated": "2022-01-31T04:13:00.000Z",
+        "quote": {
+          "USD": {
+            "price": 369.4703063892095,
+            "volume_24h": 1318563252.713108,
+            "volume_change_24h": 0.8525,
+            "percent_change_1h": -0.0671048,
+            "percent_change_24h": -3.6054543,
+            "percent_change_7d": -0.95969062,
+            "percent_change_30d": -28.67319455,
+            "percent_change_60d": -40.028663,
+            "percent_change_90d": -32.73849504,
+            "market_cap": 61005740236.02214,
+            "market_cap_dominance": 3.6537,
+            "fully_diluted_market_cap": 61005739907.19,
+            "last_updated": "2022-01-31T04:13:00.000Z"
+          }
+        }
+      }
+    ];
     const loading = ref(true);
     const error = ref(null);
 
