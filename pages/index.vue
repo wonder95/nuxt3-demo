@@ -10,6 +10,7 @@
         <th>Price</th>
         <th>Details</th>
       </tr>
+      </thead>
       <tr v-for="currency in data.data" :key="data.id">
         <td>{{ currency.name }}</td>
         <td>{{ currency.symbol }}</td>
@@ -18,7 +19,7 @@
           <NuxtLink :to="'/currency/' + currency.id">{{ currency.id }}</NuxtLink>
         </td>
       </tr>
-      </thead>
+
     </table>
   </main>
 </template>
