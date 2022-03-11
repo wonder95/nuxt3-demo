@@ -1,8 +1,6 @@
 <template>
   <div>
     <h2>{{ coin[0].name }} Detail page</h2>
-    {{ $route.params.id }}
-
     <table border="1 px solid">
       <thead>
         <th>Symbol</th>
