@@ -27,7 +27,7 @@
 <script>
 export default {
   async setup() {
-    const {data} = await useFetch('/api/coinlore/tickers');
+    const {data} = await useFetch('/api/coinlore/tickers?limit=10');
 
     return {
       data
