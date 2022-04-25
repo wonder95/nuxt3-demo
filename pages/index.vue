@@ -11,7 +11,7 @@
         <th>Details</th>
       </tr>
       </thead>
-      <tr v-for="currency in data.data" :key="data.id">
+      <tr v-for="currency in data.data" :key="data.data.id">
         <td>{{ currency.name }}</td>
         <td>{{ currency.symbol }}</td>
         <td>{{ currency.price_usd }}</td>
@@ -24,14 +24,6 @@
   </main>
 </template>
 
-<script>
-export default {
-  async setup() {
+<script setup>
     const {data} = await useFetch('/api/coinlore/tickers?limit=10');
-
-    return {
-      data
-    };
-  }
-}
 </script>
