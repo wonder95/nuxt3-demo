@@ -6,7 +6,7 @@
     "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
-    "nuxt": "rc"
+    "nuxt3": "latest"
   },
   "dependencies": {
     "@nuxt/kit": "^3.0.0-rc.1"
