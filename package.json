@@ -8,5 +8,7 @@
   "devDependencies": {
     "nuxt": "rc"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@nuxt/kit": "^3.0.0-rc.1"
+  }
 }
